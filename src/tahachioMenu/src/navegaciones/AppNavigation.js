@@ -3,9 +3,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import HomeScreen from '../componentes/vistas/home'
-import CategoriesScreen from '../componentes/vistas/homeTahachio'
+import BusquedaAvanzada from '../componentes/vistas/busquedasAvanzadas'
 import EjemploCards from '../componentes/vistas/exampleCards'
 import buscar from '../componentes/vistas/busquedasExample'
+import Historicos from '../componentes/vistas/listaHistoricos'
+import Antecedentes from '../componentes/vistas/controlAntecedentes'
 import DrawerContainer from '../componentes/DrawerContainer/DrawerContainer'
 
 const Stack = createNativeStackNavigator()
@@ -26,7 +28,7 @@ function Principal() {
     </Stack.Navigator>
   )
 }
-function Secundario() {
+function BusquedaConMenu() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -38,11 +40,11 @@ function Secundario() {
         },
       }}
     >
-      <Stack.Screen name="Categories" component={CategoriesScreen} />
+      <Stack.Screen name="Busqueda Avanzada" component={BusquedaAvanzada} />
     </Stack.Navigator>
   )
 }
-function Cards() {
+function listHistoricos() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -54,7 +56,23 @@ function Cards() {
         },
       }}
     >
-      <Stack.Screen name="Categories" component={EjemploCards} />
+      <Stack.Screen name="Historicos" component={Historicos} />
+    </Stack.Navigator>
+  )
+}
+function consultarAntecedente() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          textAlign: 'center',
+          alignSelf: 'center',
+          flex: 1,
+        },
+      }}
+    >
+      <Stack.Screen name="ConsultarAntecedentes" component={Antecedentes} />
     </Stack.Navigator>
   )
 }
@@ -87,8 +105,13 @@ function DrawerStack() {
     >
       <Drawer.Screen name="Inicio" component={Principal} />
       <Drawer.Screen name="Leyes de transito." component={Busqueda} />
-      <Drawer.Screen name="Consultas Generales" component={Secundario} />
-      <Drawer.Screen name="Historicos" component={Cards} />
+      <Drawer.Screen name="Consultas Generales" component={BusquedaConMenu} />
+      <Drawer.Screen
+        name="Consulta Antecedentes"
+        component={consultarAntecedente}
+      />
+      <Drawer.Screen name="Historicos" component={listHistoricos} />
+
       <Drawer.Screen name="Salir" component={Busqueda} />
     </Drawer.Navigator>
   )
