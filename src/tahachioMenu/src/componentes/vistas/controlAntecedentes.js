@@ -17,7 +17,7 @@ export default function App() {
     setScanned(true)
     alert(`Bar code with type ${type} and data ${data} has been scanned!`)
   }
-
+  // lol
   if (hasPermission === null) {
     return <Text>Requesting for camera permission</Text>
   }
