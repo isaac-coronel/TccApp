@@ -8,6 +8,7 @@ import EjemploCards from '../componentes/vistas/exampleCards'
 import buscar from '../componentes/vistas/busquedasExample'
 import Historicos from '../componentes/vistas/listaHistoricos'
 import Antecedentes from '../componentes/vistas/controlAntecedentes'
+import mapsCamino from '../componentes/vistas/mapsCamino'
 import DrawerContainer from '../componentes/DrawerContainer/DrawerContainer'
 
 const Stack = createNativeStackNavigator()
@@ -92,6 +93,22 @@ function Busqueda() {
     </Stack.Navigator>
   )
 }
+function comoLlegar() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          textAlign: 'center',
+          alignSelf: 'center',
+          flex: 1,
+        },
+      }}
+    >
+      <Stack.Screen name="Como llegar" component={mapsCamino} />
+    </Stack.Navigator>
+  )
+}
 
 const Drawer = createDrawerNavigator()
 
@@ -112,7 +129,7 @@ function DrawerStack() {
       />
       <Drawer.Screen name="Historicos" component={listHistoricos} />
 
-      <Drawer.Screen name="Salir" component={Busqueda} />
+      <Drawer.Screen name="Como llegar?" component={comoLlegar} />
     </Drawer.Navigator>
   )
 }

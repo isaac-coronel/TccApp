@@ -8,6 +8,7 @@ import {
   FlatList,
 } from 'react-native'
 import { Text, Card, Button, Icon } from 'react-native-elements'
+import mapsCamino from './mapsCamino'
 
 const comisariaData = [
   {
@@ -183,6 +184,11 @@ const Cards = () => {
             marginBottom: 0,
           }}
           title="Como llegar?"
+          /* onPress={() =>
+            navigation.navigate(
+              mapsCamino(-25.30213145483248, -57.540022137121184)
+            )
+          } */
         />
       </Card>
     )
