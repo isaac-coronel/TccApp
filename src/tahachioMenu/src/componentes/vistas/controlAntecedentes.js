@@ -15,6 +15,36 @@ export default function App() {
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true)
+    // useEffect(() => {
+
+    const myHeaders = new Headers()
+    myHeaders.append('content-type', 'application/json')
+
+    const raw = JSON.stringify({
+      ciudad: 'Asuncion',
+      barrio: 'Santa Maria',
+    })
+
+    const requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+
+      redirect: 'follow',
+    }
+
+    fetch(
+      'https://node-mysql-isak.herokuapp.com/api/getAntecedentes/' + data,
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result.result[0][0])
+        alert(
+          `datos de los antecedentes ${result.result[0][0].ante_descripcion}`
+        )
+      })
+      .catch((error) => console.log('error', error))
+    // }, [])
     alert(`Bar code with type ${type} and data ${data} has been scanned!`)
   }
   // lol
