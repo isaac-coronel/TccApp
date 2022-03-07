@@ -127,7 +127,6 @@ function DrawerStack() {
         name="Consulta Antecedentes"
         component={consultarAntecedente}
       />
-      <Drawer.Screen name="Historicos" component={listHistoricos} />
 
       <Drawer.Screen name="Como llegar?" component={comoLlegar} />
     </Drawer.Navigator>
