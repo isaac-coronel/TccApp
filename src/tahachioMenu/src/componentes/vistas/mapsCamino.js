@@ -16,13 +16,11 @@ export default function mapsCamino() {
   ); */
   console.log('ubicacion ', origin)
   const destination = {
-    latitude: -25.30213145483248,
-    longitude: -57.540022137121184,
-    // latitude: lat,
-    // longitude: long,
+    latitude: -25.3080949000692,
+    longitude: -57.52305785973432,
   }
   // -25.30213145483248, -57.540022137121184
-  const GOOGLE_MAPS_APIKEY = '...' // api key de google
+  const GOOGLE_MAPS_APIKEY = 'AIzaSyCLKbIZ6jt7oSZ-f3XZFUdUsvw18VUH2-M' // api key de google
   return (
     <View style={styles.container}>
       <MapView
@@ -39,9 +37,10 @@ export default function mapsCamino() {
         />
         <MapView.Marker
           coordinate={{
-            latitude: -25.30213145483248,
-            longitude: -57.540022137121184,
+            latitude: -25.3080949000692,
+            longitude: -57.52305785973432,
           }}
+          icon={require('../../../../assets/iconos/comisariaLogo.png')}
         />
         <MapViewDirections
           origin={origin}

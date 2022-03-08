@@ -106,11 +106,11 @@ const Cards = () => {
         </View>
         <View style={styles.user}>
           <Text style={styles.name}>Ciudad: </Text>
-          <Text style={styles.name}>{item.Ciudad_id_ciudad}</Text>
+          <Text style={styles.name}>{item.ciud_descripcion}</Text>
         </View>
         <View style={styles.user}>
           <Text style={styles.name}>Barrio: </Text>
-          <Text style={styles.name}>{item.Barrio_id_barrio}</Text>
+          <Text style={styles.name}>{item.barr_descripcion}</Text>
         </View>
         <View style={styles.user}>
           <Text style={styles.name}>Dependencia: </Text>
@@ -118,7 +118,7 @@ const Cards = () => {
         </View>
         <View style={styles.user}>
           <Text style={styles.name}>Telefono: </Text>
-          <Text style={styles.name}>{item.pers_ci}</Text>
+          <Text style={styles.name}>{item.telefono}</Text>
         </View>
       </Card>
     )
@@ -147,10 +147,6 @@ const Cards = () => {
           <Text style={styles.name}>Cedula de Identidad: </Text>
           <Text style={styles.name}>{item.pers_ci}</Text>
         </View>
-        <View style={styles.user}>
-          <Text style={styles.name}>Licencia: </Text>
-          <Text style={styles.name}>{item.id_direccion}</Text>
-        </View>
       </Card>
     )
   }
@@ -169,27 +165,6 @@ const Cards = () => {
           source={require('../../../../assets/iconos/comisariaLogo.png')}
         />
         <Text style={{ marginBottom: 10 }}>{comisariaData[0].info}</Text>
-        <Button
-          icon={
-            <Icon
-              name="place"
-              color="#ffffff"
-              iconStyle={{ marginRight: 10 }}
-            />
-          }
-          buttonStyle={{
-            borderRadius: 0,
-            marginLeft: 0,
-            marginRight: 0,
-            marginBottom: 0,
-          }}
-          title="Como llegar?"
-          /* onPress={() =>
-            navigation.navigate(
-              mapsCamino(-25.30213145483248, -57.540022137121184)
-            )
-          } */
-        />
       </Card>
     )
   }

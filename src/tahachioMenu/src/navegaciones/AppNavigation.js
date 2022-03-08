@@ -123,7 +123,7 @@ function DrawerStack() {
     >
       <Drawer.Screen name="Inicio" component={Principal} />
       <Drawer.Screen name="Leyes de transito." component={Busqueda} />
-      <Drawer.Screen name="Consultas Generales" component={BusquedaConMenu} />
+      <Drawer.Screen name="Leyes" component={BusquedaConMenu} />
       <Drawer.Screen
         name="Consulta Antecedentes"
         component={consultarAntecedente}

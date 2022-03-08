@@ -88,7 +88,8 @@ const App = () => {
     return (
       // Flat List Item
       <Text style={styles.itemStyle} onPress={() => getItem(item)}>
-        {item.id_capitulo}.{item.capi_descripcion.toUpperCase()}
+        {item.id_capitulo}. {item.norm_descripcion.toUpperCase()} -
+        {item.capi_descripcion.toUpperCase()}
       </Text>
     )
   }

@@ -40,12 +40,19 @@ export default function App() {
       .then((result) => {
         console.log(result.result[0][0])
         alert(
-          `datos de los antecedentes ${result.result[0][0].ante_descripcion}`
+          `Datos de los antecedentes 
+          Nombre: ${result.result[0][0].pers_nombre}
+          Apellido: ${result.result[0][0].pers_apellido}
+          C.I: ${result.result[0][0].pers_ci}
+          Antecedente: ${result.result[0][0].ante_descripcion}`
         )
       })
-      .catch((error) => console.log('error', error))
+      .catch((error) => {
+        console.log('error', error)
+        alert('Usuario sin registro de antecedentes')
+      })
     // }, [])
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`)
+    // alert(`Bar code with type ${type} and data ${data} has been scanned!`)
   }
   // lol
   if (hasPermission === null) {
