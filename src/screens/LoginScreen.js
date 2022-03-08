@@ -28,8 +28,13 @@ export default function LoginScreen({ navigation }) {
         index: 0,
         routes: [{ name: 'menuScreen' }],
       })
+    } else {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'menuScreenUser' }],
+      })
     }
-    navigation.navigate('menuScreenUser')
+    // navigation.navigate('menuScreenUser')
     /* navigation.reset({
       index: 0,
       routes: [{ name: 'menuScreenUser' }],
