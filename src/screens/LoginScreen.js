@@ -23,10 +23,17 @@ export default function LoginScreen({ navigation }) {
       setPassword({ ...password, error: passwordError })
       return
     }
-    navigation.reset({
+    if (email.value == 'isaalbert.cor@gmail.com') {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'menuScreen' }],
+      })
+    }
+    navigation.navigate('menuScreenUser')
+    /* navigation.reset({
       index: 0,
-      routes: [{ name: 'menuScreen' }],
-    })
+      routes: [{ name: 'menuScreenUser' }],
+    }) */
   }
 
   return (

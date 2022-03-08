@@ -22,7 +22,7 @@ export default function mapsCamino() {
     // longitude: long,
   }
   // -25.30213145483248, -57.540022137121184
-  const GOOGLE_MAPS_APIKEY = 'AIzaSyDHrIlwoJWAc3KzRTLa8pTEGF8AsP7yAEI' // api key de google
+  const GOOGLE_MAPS_APIKEY = '...' // api key de google
   return (
     <View style={styles.container}>
       <MapView

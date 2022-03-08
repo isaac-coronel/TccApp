@@ -9,7 +9,6 @@ import buscar from '../componentes/vistas/busquedasExample'
 import Historicos from '../componentes/vistas/listaHistoricos'
 import Antecedentes from '../componentes/vistas/controlAntecedentes'
 import mapsCamino from '../componentes/vistas/mapsCamino'
-import startScreen from '../../../screens/StartScreen'
 import DrawerContainer from '../componentes/DrawerContainer/DrawerContainer'
 
 const Stack = createNativeStackNavigator()
@@ -124,12 +123,8 @@ function DrawerStack() {
       <Drawer.Screen name="Inicio" component={Principal} />
       <Drawer.Screen name="Leyes de transito." component={Busqueda} />
       <Drawer.Screen name="Consultas Generales" component={BusquedaConMenu} />
-      <Drawer.Screen
-        name="Consulta Antecedentes"
-        component={consultarAntecedente}
-      />
 
-      <Drawer.Screen name="Como llegar" component={comoLlegar} />
+      <Drawer.Screen name="Como llegar?" component={comoLlegar} />
     </Drawer.Navigator>
   )
 }

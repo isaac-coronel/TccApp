@@ -47,7 +47,7 @@ const App = () => {
 
       redirect: 'follow',
     }
-
+    // jkhv
     fetch(
       'https://node-mysql-isak.herokuapp.com/api/getLeyes/1',
       requestOptions
