@@ -164,7 +164,6 @@ const Cards = () => {
               }} */
           source={require('../../../../assets/iconos/comisariaLogo.png')}
         />
-        <Text style={{ marginBottom: 10 }}>{comisariaData[0].info}</Text>
       </Card>
     )
   }
