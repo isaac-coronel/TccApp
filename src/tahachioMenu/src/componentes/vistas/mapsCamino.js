@@ -5,7 +5,8 @@ import MapViewDirections from 'react-native-maps-directions'
 // import Geolocation from "@react-native-community/geolocation";
 
 export default function mapsCamino() {
-  const origin = { latitude: -25.302016, longitude: -57.543559 }
+  // const origin = { latitude: -25.302016, longitude: -57.543559 }
+  const origin = { latitude: -25.28634496294947, longitude: -57.61144845788857 }
   /* navigator.geolocation = require("@react-native-community/geolocation");
   navigator.geolocation.getCurrentPosition((location) => {
     origin.longitude = location.coords.longitude; // longitud
@@ -15,9 +16,13 @@ export default function mapsCamino() {
     consola.log(información)
   ); */
   console.log('ubicacion ', origin)
-  const destination = {
+  /* const destination = {
     latitude: -25.3080949000692,
     longitude: -57.52305785973432,
+  } */
+  const destination = {
+    latitude: -25.292330237176042,
+    longitude: -57.60259716831371,
   }
   // -25.30213145483248, -57.540022137121184
   const GOOGLE_MAPS_APIKEY = 'AIzaSyCLKbIZ6jt7oSZ-f3XZFUdUsvw18VUH2-M' // api key de google
@@ -25,20 +30,23 @@ export default function mapsCamino() {
     <View style={styles.container}>
       <MapView
         initialRegion={{
-          latitude: -25.302016,
-          longitude: -57.543559,
+          latitude: -25.28634496294947,
+          longitude: -57.61144845788857,
           latitudeDelta: 0.1,
           longitudeDelta: 0.1,
         }}
         style={styles.map}
       >
         <MapView.Marker
-          coordinate={{ latitude: -25.302016, longitude: -57.543559 }}
+          coordinate={{
+            latitude: -25.28634496294947,
+            longitude: -57.61144845788857,
+          }}
         />
         <MapView.Marker
           coordinate={{
-            latitude: -25.3080949000692,
-            longitude: -57.52305785973432,
+            latitude: -25.292330237176042,
+            longitude: -57.60259716831371,
           }}
           icon={require('../../../../assets/iconos/comisariaLogo.png')}
         />

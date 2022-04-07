@@ -8,6 +8,7 @@ import EjemploCards from '../componentes/vistas/exampleCards'
 import buscar from '../componentes/vistas/busquedasExample'
 import Historicos from '../componentes/vistas/listaHistoricos'
 import Antecedentes from '../componentes/vistas/controlAntecedentes'
+import historialAuditoria from '../componentes/vistas/historialAuditoria'
 import mapsCamino from '../componentes/vistas/mapsCamino'
 import startScreen from '../../../screens/StartScreen'
 import DrawerContainer from '../componentes/DrawerContainer/DrawerContainer'
@@ -78,6 +79,25 @@ function consultarAntecedente() {
     </Stack.Navigator>
   )
 }
+function historialAntecedentes() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          textAlign: 'center',
+          alignSelf: 'center',
+          flex: 1,
+        },
+      }}
+    >
+      <Stack.Screen
+        name="historialAntecedentes"
+        component={historialAuditoria}
+      />
+    </Stack.Navigator>
+  )
+}
 function Busqueda() {
   return (
     <Stack.Navigator
@@ -127,6 +147,10 @@ function DrawerStack() {
       <Drawer.Screen
         name="Consulta Antecedentes"
         component={consultarAntecedente}
+      />
+      <Drawer.Screen
+        name="Historial Consultas"
+        component={historialAntecedentes}
       />
 
       <Drawer.Screen name="Como llegar" component={comoLlegar} />

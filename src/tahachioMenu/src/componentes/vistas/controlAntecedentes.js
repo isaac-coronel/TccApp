@@ -50,7 +50,7 @@ export default function App() {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true)
     // useEffect(() => {
-
+    const CryptoJS = require('crypto-js')
     const myHeaders = new Headers()
     myHeaders.append('content-type', 'application/json')
 
@@ -65,9 +65,12 @@ export default function App() {
 
       redirect: 'follow',
     }
-
+    const bytes = CryptoJS.AES.decrypt(data, 'secret key 123')
+    const originalText = bytes.toString(CryptoJS.enc.Utf8)
+    console.log('el valor desemcriptado', originalText)
     fetch(
-      'https://node-mysql-isak.herokuapp.com/api/getAntecedentes/' + data,
+      'https://node-mysql-isak.herokuapp.com/api/getAntecedentes/' +
+        originalText,
       requestOptions
     )
       .then((response) => response.json())
@@ -83,11 +86,10 @@ export default function App() {
             ' / ' +
             result.result[0][0].ante_descripcion
           setAuditoriaConsulta(datos)
-          const CryptoJS = require('crypto-js')
 
           // Encrypt
           const ciphertext = CryptoJS.AES.encrypt(
-            'my message',
+            '5255199',
             'secret key 123'
           ).toString()
 

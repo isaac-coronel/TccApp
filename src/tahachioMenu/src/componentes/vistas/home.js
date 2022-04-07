@@ -41,7 +41,7 @@ const Cards = () => {
 
     const raw = JSON.stringify({
       ciudad: 'Asuncion',
-      barrio: 'Santa Maria',
+      barrio: 'Las Mercedes',
     })
 
     const requestOptions = {
